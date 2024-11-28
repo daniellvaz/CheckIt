@@ -11,6 +11,7 @@ import {
 } from "fastify-type-provider-zod";
 
 import todoRoutes from "./src/routes/todo.routes";
+import { env } from "./src/env";
 
 const app = fastify();
 
@@ -37,7 +38,7 @@ app.register(fastifySwaggerUi, {
 app.register(todoRoutes);
 
 app
-  .listen({ port: 3333, host: "0.0.0.0" })
+  .listen({ port: env.PORT, host: "0.0.0.0" })
   .then(() => console.log("Server is running"));
 
 app.ready().then(() => {

@@ -3,15 +3,22 @@
   "tasks": {
     "dev": {
       "persistent": true,
-      "cache": false
+      "cache": false,
+      "env": [
+        "DATABASE_URL",
+        "PORT"
+      ]
     },
     "prisma:generate": {
-      "persistent": true,
+      "persistent": false,
       "cache": false
     },
     "prisma:migrate": {
-      "persistent": true,
-      "cache": false
+      "persistent": false,
+      "cache": false,
+      "env": [
+        "DATABASE_URL"
+      ]
     }
   },
   "globalDependencies": [
