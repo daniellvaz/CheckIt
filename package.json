@@ -18,6 +18,7 @@
     "turbo": "^2.3.3"
   },
   "dependencies": {
-    "dotenv-cli": "^7.4.4"
+    "dotenv-cli": "^7.4.4",
+    "zod": "^3.23.8"
   }
 }

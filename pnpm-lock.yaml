@@ -11,10 +11,123 @@ importers:
       dotenv-cli:
         specifier: ^7.4.4
         version: 7.4.4
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       turbo:
         specifier: ^2.3.3
         version: 2.3.3
+
+  apps/api:
+    dependencies:
+      '@fastify/cors':
+        specifier: ^10.0.1
+        version: 10.0.1
+      '@fastify/swagger':
+        specifier: ^9.4.0
+        version: 9.4.0
+      '@fastify/swagger-ui':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@prisma/client':
+        specifier: 5.22.0
+        version: 5.22.0(prisma@5.22.0)
+      fastify:
+        specifier: ^5.1.0
+        version: 5.1.0
+    devDependencies:
+      '@faker-js/faker':
+        specifier: ^9.2.0
+        version: 9.2.0
+      '@types/node':
+        specifier: ^22.10.0
+        version: 22.10.1
+      fastify-type-provider-zod:
+        specifier: ^4.0.2
+        version: 4.0.2(fastify@5.1.0)(zod@3.23.8)
+      prisma:
+        specifier: ^5.22.0
+        version: 5.22.0
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.2
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+
+  apps/web:
+    dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.9.1
+        version: 3.9.1(react-hook-form@7.53.2)
+      '@tanstack/react-query':
+        specifier: ^5.61.4
+        version: 5.61.4(react@18.3.1)
+      axios:
+        specifier: ^1.7.8
+        version: 1.7.8
+      lucide-react:
+        specifier: ^0.462.0
+        version: 0.462.0(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.53.2
+        version: 7.53.2(react@18.3.1)
+      tailwind-variants:
+        specifier: ^0.3.0
+        version: 0.3.0(tailwindcss@3.4.15)
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.15.0
+        version: 9.15.0
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.3.4(vite@6.0.0)
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.49)
+      eslint:
+        specifier: ^9.15.0
+        version: 9.15.0
+      eslint-plugin-react-hooks:
+        specifier: ^5.0.0
+        version: 5.0.0(eslint@9.15.0)
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.14
+        version: 0.4.14(eslint@9.15.0)
+      globals:
+        specifier: ^15.12.0
+        version: 15.12.0
+      orval:
+        specifier: ^7.3.0
+        version: 7.3.0(openapi-types@12.1.3)(typescript@5.6.2)
+      postcss:
+        specifier: ^8.4.49
+        version: 8.4.49
+      tailwindcss:
+        specifier: ^3.4.15
+        version: 3.4.15
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.2
+      typescript-eslint:
+        specifier: ^8.15.0
+        version: 8.15.0(eslint@9.15.0)(typescript@5.6.2)
+      vite:
+        specifier: ^6.0.0
+        version: 6.0.0
 
   packages/api:
     dependencies:
@@ -929,6 +1042,14 @@ packages:
       - supports-color
     dev: false
 
+  /@hookform/resolvers@3.9.1(react-hook-form@7.53.2):
+    resolution: {integrity: sha512-ud2HqmGBM0P0IABqoskKWI6PEf6ZDDBZkFqe2Vnl+mTHCEHzr3ISjjZyCwTjC/qpL25JC9aIDkloQejvMeq0ug==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.53.2(react@18.3.1)
+    dev: false
+
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1147,7 +1268,7 @@ packages:
       '@orval/core': 7.3.0(openapi-types@12.1.3)
       lodash.get: 4.4.2
       lodash.omit: 4.5.0
-      openapi3-ts: 4.2.2
+      openapi3-ts: 4.4.0
     transitivePeerDependencies:
       - encoding
       - openapi-types
@@ -1405,7 +1526,7 @@ packages:
     dependencies:
       '@stoplight/json': 3.21.7
       '@stoplight/path': 1.3.2
-      '@stoplight/types': 13.6.0
+      '@stoplight/types': 13.20.0
       '@types/urijs': 1.19.25
       dependency-graph: 0.11.0
       fast-memoize: 2.5.2
