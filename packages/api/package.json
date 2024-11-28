@@ -1,4 +1,6 @@
 {
+	"name": "@check-it/api",
+	"private": true,
 	"prisma": {
 		"seed": "tsx ./prisma/seeds/index.ts"
 	},
