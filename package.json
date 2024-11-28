@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@8.6.12",
   "scripts": {
-    "dev:api": "turbo "
+    "dev": "turbo dev",
+    "dev:api": "turbo dev --filter=@check-it/api",
+    "dev:web": "turbo dev --filter=@check-it/web",
+    "prisma:generate": "turbo prisma:generate --filter=@check-it/api",
+    "prisma:migrate": "turbo prisma:migrate --filter=@check-it/api"
   },
   "keywords": [],
   "author": "",
