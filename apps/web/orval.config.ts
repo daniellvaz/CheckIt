@@ -1,3 +1,5 @@
+import { env } from "./src/env";
+
 import { defineConfig } from "orval";
 
 export default defineConfig({
@@ -6,7 +8,7 @@ export default defineConfig({
     output: {
       clean: true,
       client: "react-query",
-      baseUrl: "http://localhost:3333",
+      baseUrl: env.API_BASE_URL,
       target: "./src/http/generated/api.ts",
       mode: "tags-split",
       override: {
