@@ -17,18 +17,22 @@ Organizar tarefas de maneira simples e clara, ajudando usuários a manterem o fo
 
 ## ✨ Funcionalidades  
 
-| **Funcionalidade**             | **Descrição**                                         | **Status**        |  
-|--------------------------------|-----------------------------------------------------|-------------------|  
-| Adicionar tarefa               | Permite criar novas tarefas.                        |       ✅          |  
-| Excluir tarefa                 | Permite remover tarefas existentes.                 |       ✅          |  
-| Atualizar tarefa               | Permite editar tarefas previamente criadas.         |       ✅          |  
-| Notificação por e-mail         | Envia notificações de lembrete por e-mail.          |       🛠️          |  
-| Alarme                         | Configura alarmes para tarefas específicas.         |       🛠️          |  
-| Agendamento de tarefas         | Permite agendar tarefas com datas e horários.       |       🛠️          |  
+| **Funcionalidade**             | **Descrição**                                       | **Status**|  
+|--------------------------------|-----------------------------------------------------|:---------:|  
+| Adicionar tarefa               | Permite criar novas tarefas.                        |     ✅    |  
+| Excluir tarefa                 | Permite remover tarefas existentes.                 |     ✅    |  
+| Atualizar tarefa               | Permite editar tarefas previamente criadas.         |     ✅    |  
+| Notificação por e-mail         | Envia notificações de lembrete por e-mail.          |     🛠️    |  
+| Alarme                         | Configura alarmes para tarefas específicas.         |     🛠️    |  
+| Agendamento de tarefas         | Permite agendar tarefas com datas e horários.       |     🛠️    |  
 
 ---
 
 ## 🛠️ Tecnologias Usadas  
+
+### **Arch**  
+- **Mono repo**  
+- **PNPM workspaces**  
 
 ### **Front-end**  
 - **TypeScript**  
