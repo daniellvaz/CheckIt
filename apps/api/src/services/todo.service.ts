@@ -7,7 +7,11 @@ import { todoSchema } from "../routes/todo.routes";
 
 export const todoService = {
   async index(request: FastifyRequest, reply: FastifyReply) {
-    const todos = await client.todo.findMany();
+    const todos = await client.todo.findMany({
+      orderBy: {
+        created_at: "desc",
+      },
+    });
 
     return reply.status(200).send(todos);
   },
