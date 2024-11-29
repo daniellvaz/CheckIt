@@ -15,6 +15,12 @@ function App() {
     <div className="min-h-screen w-full bg-zinc-950 text-zinc-50">
       <Header />
       <Home />
+      <footer className="w-full p-4 text-center text-zinc-500">
+        <small>
+          <span className="text-lime-500">CheckIt</span> - Make your day simple.
+          © | {new Date().getFullYear()} Todos os direitos reservados
+        </small>
+      </footer>
     </div>
   ) : (
     <Loading />
