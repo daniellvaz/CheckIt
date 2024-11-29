@@ -1,17 +1,17 @@
 import { tv } from "tailwind-variants";
 import { LiHTMLAttributes, useState } from "react";
 
-import Checkbox from "../checkbox";
+import Checkbox from "@/components/ui/checkbox";
 import { useQueryClient } from "@tanstack/react-query";
-import { GetTodos200Item } from "../../http/generated/api.schemas";
+import { GetTodos200Item } from "@/http/generated/api.schemas";
 import {
   getGetTodosQueryKey,
   useDeleteTodosId,
   usePatchTodosId,
-} from "../../http/generated/todos/todos";
+} from "@/http/generated/todos/todos";
 import { Trash } from "lucide-react";
 
-export interface CardProps extends LiHTMLAttributes<HTMLLIElement> {
+export interface TodoProps extends LiHTMLAttributes<HTMLLIElement> {
   data: GetTodos200Item;
 }
 
@@ -19,7 +19,7 @@ export interface UpdateTodoStatusForm {
   status: "DONE";
 }
 
-const cardVariant = tv({
+const todoVariant = tv({
   base: "flex items-center gap-2 p-2 relative",
   variants: {
     done: {
@@ -28,7 +28,7 @@ const cardVariant = tv({
   },
 });
 
-export default function Card({ data, ...rest }: CardProps) {
+export function TodoItem({ data, ...rest }: TodoProps) {
   const [isTrashVisible, setIsTrashVisible] = useState(false);
   const [done, setDone] = useState(() => {
     if (data.status === "DONE") {
@@ -76,7 +76,7 @@ export default function Card({ data, ...rest }: CardProps) {
   return (
     <li
       {...rest}
-      className={cardVariant({ done })}
+      className={todoVariant({ done })}
       onMouseEnter={() => setIsTrashVisible(true)}
       onMouseLeave={() => setIsTrashVisible(false)}
     >
