@@ -4,7 +4,7 @@ Aqui está o README estruturado para o **Check-it** com base nas informações f
 
 # Check-it  
 
-**"Simplify your day, one task at a time."**  
+**"Make your day simple."**  
 
 O **Check-it** é um aplicativo para organização de tarefas, projetado para ser simples e intuitivo. Ideal para qualquer público, o objetivo é tornar a gestão do dia a dia mais clara e eficiente.  
 
@@ -19,12 +19,12 @@ Organizar tarefas de maneira simples e clara, ajudando usuários a manterem o fo
 
 | **Funcionalidade**             | **Descrição**                                         | **Status**        |  
 |--------------------------------|-----------------------------------------------------|-------------------|  
-| Adicionar tarefa               | Permite criar novas tarefas.                        | Implementado      |  
-| Excluir tarefa                 | Permite remover tarefas existentes.                 | Implementado      |  
-| Atualizar tarefa               | Permite editar tarefas previamente criadas.         | Implementado      |  
-| Notificação por e-mail         | Envia notificações de lembrete por e-mail.          | A ser implementado|  
-| Alarme                         | Configura alarmes para tarefas específicas.         | A ser implementado|  
-| Agendamento de tarefas         | Permite agendar tarefas com datas e horários.       | A ser implementado|  
+| Adicionar tarefa               | Permite criar novas tarefas.                        |       ✅          |  
+| Excluir tarefa                 | Permite remover tarefas existentes.                 |       ✅          |  
+| Atualizar tarefa               | Permite editar tarefas previamente criadas.         |       ✅          |  
+| Notificação por e-mail         | Envia notificações de lembrete por e-mail.          |       🛠️          |  
+| Alarme                         | Configura alarmes para tarefas específicas.         |       🛠️          |  
+| Agendamento de tarefas         | Permite agendar tarefas com datas e horários.       |       🛠️          |  
 
 ---
 
@@ -62,7 +62,7 @@ O **Check-it** foi projetado para todos que desejam gerenciar suas tarefas e com
 
 1. Clone o repositório:  
    ```bash  
-   git clone https://github.com/seu-usuario/check-it.git  
+   git clone https://github.com/seu-usuario/CheckIt.git check-it 
    ```  
 
 2. Navegue até o diretório do projeto:  
