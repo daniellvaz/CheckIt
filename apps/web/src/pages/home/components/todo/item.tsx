@@ -10,6 +10,7 @@ import {
   usePatchTodosId,
 } from "@/http/generated/todos/todos";
 import { Trash } from "lucide-react";
+import { toast } from "react-toastify";
 
 export interface TodoProps extends LiHTMLAttributes<HTMLLIElement> {
   data: GetTodos200Item;
@@ -20,7 +21,7 @@ export interface UpdateTodoStatusForm {
 }
 
 const todoVariant = tv({
-  base: "flex items-center gap-2 p-2 relative",
+  base: "flex items-center gap-2 p-2",
   variants: {
     done: {
       true: "line-through",
@@ -48,7 +49,17 @@ export function TodoItem({ data, ...rest }: TodoProps) {
     },
   });
 
-  const deleteTodoMutate = useDeleteTodosId();
+  const deleteTodoMutate = useDeleteTodosId({
+    mutation: {
+      onSuccess() {
+        toast.success("Atividade deletada com sucesso! 😀", {
+          progressStyle: {
+            backgroundColor: "#84cc16",
+          },
+        });
+      },
+    },
+  });
 
   const onChange = async () => {
     await createTodoMutate.mutateAsync({
@@ -80,16 +91,18 @@ export function TodoItem({ data, ...rest }: TodoProps) {
       onMouseEnter={() => setIsTrashVisible(true)}
       onMouseLeave={() => setIsTrashVisible(false)}
     >
+      <div className="flex gap-4">
+        <Checkbox onChange={onChange} disabled={done} defaultValue={done} />
+        <p>{data.title}</p>
+      </div>
       {isTrashVisible && (
         <button
           onClick={onDelete}
-          className="absolute -left-4 rounded bg-rose-900 p-1 text-rose-500"
+          className="rounded bg-rose-900 p-1 text-rose-500"
         >
           <Trash size={14} />
         </button>
       )}
-      <Checkbox onChange={onChange} disabled={done} defaultValue={done} />
-      <p>{data.title}</p>
     </li>
   );
 }
