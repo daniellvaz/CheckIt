@@ -20,6 +20,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
     "react-loading-skeleton": "^3.5.0",
+    "react-toastify": "^10.0.6",
     "tailwind-variants": "^0.3.0"
   },
   "devDependencies": {
