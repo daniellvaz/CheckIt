@@ -19,10 +19,10 @@ const schema = z.object({
 });
 
 export function HomeForm() {
-  const onSubmit = async (data: PostTodosBody) => {
-    const mutate = usePostTodos();
-    const queryClient = useQueryClient();
+  const mutate = usePostTodos();
+  const queryClient = useQueryClient();
 
+  const onSubmit = async (data: PostTodosBody) => {
     await mutate.mutateAsync({
       data,
     });
