@@ -1,4 +1,4 @@
-import { Alert, FlatList, Text } from "react-native";
+import { Alert, FlatList, Text, TouchableOpacity } from "react-native";
 
 import { TodolistHeading } from "./heading";
 import { TodolistContent } from "./content";
@@ -8,6 +8,7 @@ import { Checkbox } from "../../../../components/checkbox";
 import { GetTodos200Item } from "../../../../http/generated/api.schemas.schemas";
 import {
   getGetTodosQueryKey,
+  useDeleteTodosId,
   usePatchTodosId,
 } from "../../../../http/generated/todos/todos";
 import { queryClient } from "../../../../libs/query-client";
@@ -18,11 +19,19 @@ export type TodolistProps = {
 };
 
 export function Todolist({ title, data }: TodolistProps) {
-  const mutation = usePatchTodosId({
+  const updateStatusMutation = usePatchTodosId({
     mutation: {
-      onSuccess(id) {
-        Alert.alert("Sucesso", "Tarefa atualizada com sucesso!");
+      onSuccess() {
+        queryClient.invalidateQueries({
+          queryKey: getGetTodosQueryKey(),
+        });
+      },
+    },
+  });
 
+  const deleteTaskMutation = useDeleteTodosId({
+    mutation: {
+      onSuccess() {
         queryClient.invalidateQueries({
           queryKey: getGetTodosQueryKey(),
         });
@@ -31,12 +40,48 @@ export function Todolist({ title, data }: TodolistProps) {
   });
 
   const onPress = async (id: string, currentStatus: boolean) => {
-    await mutation.mutateAsync({
-      id,
-      data: {
-        status: currentStatus ? "DONE" : "TODO",
-      },
-    });
+    if (!currentStatus) {
+      Alert.alert("Atenção", "Deseja realmente atualizar a tarefa? 🫣", [
+        {
+          text: "Atualizar",
+          async onPress() {
+            await updateStatusMutation.mutateAsync({
+              id,
+              data: {
+                status: "TODO",
+              },
+            });
+          },
+        },
+      ]);
+    } else {
+      await updateStatusMutation.mutateAsync({
+        id,
+        data: {
+          status: "DONE",
+        },
+      });
+    }
+  };
+
+  const onLongPress = async (id: string, title: string) => {
+    Alert.alert(
+      "Atenção",
+      `Deseja realmente deletar essa tarefa "${title}" ?`,
+      [
+        {
+          text: "Deletar",
+          async onPress() {
+            await deleteTaskMutation.mutateAsync({
+              id,
+            });
+          },
+        },
+        {
+          text: "Cancelar",
+        },
+      ]
+    );
   };
 
   return (
@@ -50,7 +95,12 @@ export function Todolist({ title, data }: TodolistProps) {
               defaultValue={item.status === "DONE"}
               onPress={(status) => onPress(item.id, status)}
             />
-            <Text className="text-zinc-50">{item.title}</Text>
+            <TouchableOpacity
+              onLongPress={() => onLongPress(item.id, item.title)}
+              className="w-full"
+            >
+              <Text className="text-xl text-zinc-50">{item.title}</Text>
+            </TouchableOpacity>
           </TodolistContent>
         )}
       />

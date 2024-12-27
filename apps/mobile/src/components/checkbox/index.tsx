@@ -30,7 +30,7 @@ export function Checkbox({
   return (
     <TouchableOpacity
       onPress={onCheckboxPress}
-      className="h-7 w-7 items-center justify-center rounded border border-zinc-800 bg-zinc-900"
+      className="h-8 w-8 items-center justify-center rounded border border-zinc-800 bg-zinc-900"
     >
       {isChecked && <Feather name="check" size={16} color="#84cc16" />}
     </TouchableOpacity>
