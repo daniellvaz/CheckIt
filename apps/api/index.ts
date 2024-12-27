@@ -39,7 +39,8 @@ app.register(todoRoutes);
 
 app
   .listen({ port: env.PORT, host: "0.0.0.0" })
-  .then(() => console.log("Server is running"));
+  .then(() => console.log("Server is running"))
+  .catch((e) => console.log(e));
 
 app.ready().then(() => {
   const spec = app.swagger();

@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
+    "expo": {
+      "persistent": true,
+      "cache": false,
+      "env": [
+        "DATABASE_URL"
+      ]
+    },
     "dev": {
       "persistent": true,
       "cache": false,

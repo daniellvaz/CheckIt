@@ -1,0 +1,37 @@
+{
+  "name": "@check-it/mobile",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "generated:api": "orval --config ./orval.config.ts"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "@tanstack/react-query": "^5.61.4",
+    "axios": "^1.7.8",
+    "expo": "~52.0.11",
+    "expo-linear-gradient": "^14.0.1",
+    "expo-status-bar": "~2.0.0",
+    "moti": "^0.29.0",
+    "nativewind": "^4.1.23",
+    "react": "18.3.1",
+    "react-hook-form": "^7.53.2",
+    "react-native": "0.76.3",
+    "react-native-gesture-handler": "^2.21.2",
+    "react-native-reanimated": "~3.16.3",
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-svg": "15.8.0",
+    "react-native-svg-transformer": "^1.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/react": "~18.3.12",
+    "tailwindcss": "3.3.2",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}

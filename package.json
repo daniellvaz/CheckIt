@@ -1,19 +1,21 @@
 {
   "name": "checkit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Make your day simple.",
   "main": "index.js",
   "packageManager": "pnpm@8.6.12",
+  "keywords": [],
+  "author": "Daniel Murilo Vaz",
+  "license": "ISC",
   "scripts": {
     "dev": "dotenv -- turbo dev",
+    "expo": "dotenv -- turbo expo",
     "dev:api": "dotenv -- turbo dev --filter=@check-it/api",
     "dev:web": "dotenv -- turbo dev --filter=@check-it/web",
+    "dev:mobile": "dotenv -- turbo dev --filter=@check-it/mobile",
     "prisma:generate": "dotenv -- turbo prisma:generate",
     "prisma:migrate": "dotenv -- turbo prisma:migrate"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "turbo": "^2.3.3"
   },
