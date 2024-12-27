@@ -1,9 +1,11 @@
-import { Image, View } from "react-native";
+import { View } from "react-native";
+
+import Logo from "../../../../assets/vertical.svg";
 
 export function Header() {
   return (
-    <View className="flex h-[20%] items-center justify-center p-4">
-      <Image source={require("../../../../assets/vertical.png")} />
+    <View className="flex h-[30%] items-center justify-center p-4">
+      <Logo />
     </View>
   );
 }
