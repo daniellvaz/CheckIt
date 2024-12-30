@@ -8,8 +8,8 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/horizontal.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#09090b"
     },
     "ios": {
@@ -37,8 +37,32 @@
         "jsx",
         "json",
         "wasm",
-        "svg"
+        "svg",
+        "mp4"
       ]
-    }
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ],
+      [
+        "expo-asset",
+        {
+          "assets": [
+            "/assets/animation.mp4"
+          ]
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#232323",
+          "image": "./assets/splash.png"
+        }
+      ]
+    ]
   }
 }
